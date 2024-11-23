@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="Bank" id="{78ebbcb3-2a83-451a-b839-8d660768a5c2}">
+	<object class="Bank" id="{61ef43c3-16a4-4c01-bb19-e84ad636e4d5}">
 		<property name="name">
 			<value>Player</value>
 		</property>
