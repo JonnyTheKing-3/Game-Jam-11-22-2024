@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using FMODUnity;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -101,11 +102,9 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKeyDown(JumpKey) && isGrounded && CanJump)
             {
+                FMODbanks.Instance.PlayJumpSFX(gameObject);
                 CanJump = false;
-                
-                // jump
                 rb.velocity += Vector3.up * jumpForce;
-
                 Invoke(nameof(ResetCanJump), .4f);
             }
         }
