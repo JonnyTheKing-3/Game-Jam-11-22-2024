@@ -92,7 +92,7 @@
 			<value>earlyDelay</value>
 		</property>
 		<property name="value">
-			<value>11.5</value>
+			<value>18</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{3198b77d-4908-44cb-830b-71f6d88de622}</destination>
@@ -103,7 +103,7 @@
 			<value>lateDelay</value>
 		</property>
 		<property name="value">
-			<value>25.5</value>
+			<value>36</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{3198b77d-4908-44cb-830b-71f6d88de622}</destination>

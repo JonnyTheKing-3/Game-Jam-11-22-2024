@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e10d3292-d75a-474d-a6f8-84940302ef01}">
+		<property name="assetPath">
+			<value>Fwee.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.020340136054422</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{092861c1-68c5-435b-9da4-ccc6a7000d71}</destination>
+		</relationship>
+	</object>
+</objects>
