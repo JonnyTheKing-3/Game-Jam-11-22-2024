@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1caa64c5-42a4-4fa1-934f-a78d75a55df8}">
+		<property name="assetPath">
+			<value>RockFootstep3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.31641723356009072</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{092861c1-68c5-435b-9da4-ccc6a7000d71}</destination>
+		</relationship>
+	</object>
+</objects>

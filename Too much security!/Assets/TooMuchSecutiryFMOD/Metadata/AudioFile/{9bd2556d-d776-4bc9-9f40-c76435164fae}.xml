@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9bd2556d-d776-4bc9-9f40-c76435164fae}">
+		<property name="assetPath">
+			<value>BushFootstep1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.25</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{092861c1-68c5-435b-9da4-ccc6a7000d71}</destination>
+		</relationship>
+	</object>
+</objects>
