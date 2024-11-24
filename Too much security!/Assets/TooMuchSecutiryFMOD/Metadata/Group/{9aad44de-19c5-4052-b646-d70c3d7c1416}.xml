@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{9aad44de-19c5-4052-b646-d70c3d7c1416}">
 		<property name="name">
-			<value>New Group</value>
+			<value>Suburbia Reverb</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{d2c51de8-c99e-4e64-ad45-c7382d97ab86}</destination>
@@ -22,5 +22,12 @@
 	</object>
 	<object class="MixerBusPanner" id="{ecd62e6c-6883-4928-b21c-4556b8558bc8}" />
 	<object class="MixerBusFader" id="{513f0e12-0825-4b4a-9ac1-96b21d6c23bf}" />
-	<object class="SFXReverbEffect" id="{3198b77d-4908-44cb-830b-71f6d88de622}" />
+	<object class="SFXReverbEffect" id="{3198b77d-4908-44cb-830b-71f6d88de622}">
+		<property name="decayTime">
+			<value>1000</value>
+		</property>
+		<property name="wetLevel">
+			<value>-78</value>
+		</property>
+	</object>
 </objects>
