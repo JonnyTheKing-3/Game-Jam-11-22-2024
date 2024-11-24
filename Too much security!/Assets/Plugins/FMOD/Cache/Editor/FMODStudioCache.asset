@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/TooMuchSecutiryFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638679904889189152
+  lastModified: 638680489391382088
   FileSizes:
   - Name: Desktop
     Value: 3224
@@ -47,6 +47,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &-6193210352252755006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Obstacles/Alarm
+  m_EditorClassIdentifier: 
+  Path: event:/Obstacles/Alarm
+  Guid:
+    Data1: -1174676282
+    Data2: 1205547324
+    Data3: -2097507682
+    Data4: -1160893702
+  Banks:
+  - {fileID: -5456986921696723833}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7374
 --- !u!114 &-5456986921696723833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +89,10 @@ MonoBehaviour:
   Path: Assets/TooMuchSecutiryFMOD/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638679903282133752
+  lastModified: 638680489400682834
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 229408
   Exists: 1
 --- !u!114 &-5212637353453838340
 MonoBehaviour:
@@ -82,7 +109,7 @@ MonoBehaviour:
   Path: Assets/TooMuchSecutiryFMOD/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638679903282108906
+  lastModified: 638680489394352756
   FileSizes:
   - Name: Desktop
     Value: 226912
@@ -130,10 +157,10 @@ MonoBehaviour:
   Path: Assets/TooMuchSecutiryFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638679904889204058
+  lastModified: 638680489391441922
   FileSizes:
   - Name: Desktop
-    Value: 1126
+    Value: 1180
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -153,19 +180,47 @@ MonoBehaviour:
   - {fileID: -5212637353453838340}
   - {fileID: -5456986921696723833}
   EditorEvents:
-  - {fileID: 3579914224577779779}
   - {fileID: 6407724004852193525}
   - {fileID: -850438748053201127}
   - {fileID: 2594098571923771050}
   - {fileID: 3452248837479709509}
   - {fileID: -6552750204294239620}
+  - {fileID: 2439855208491545951}
+  - {fileID: -6193210352252755006}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8069070812477243009}
   StringsBanks:
   - {fileID: -807855071620163153}
-  cacheTime: 638679904889204058
+  cacheTime: 638680489400682834
   cacheVersion: 131618
+--- !u!114 &2439855208491545951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Suburbia
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Suburbia
+  Guid:
+    Data1: -1776871841
+    Data2: 1171241028
+    Data3: 655462813
+    Data4: -1081443048
+  Banks:
+  - {fileID: -8069070812477243009}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &2594098571923771050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,33 +275,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1750
---- !u!114 &3579914224577779779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/New Snapshot
-  m_EditorClassIdentifier: 
-  Path: snapshot:/New Snapshot
-  Guid:
-    Data1: -1776871841
-    Data2: 1171241028
-    Data3: 655462813
-    Data4: -1081443048
-  Banks:
-  - {fileID: -8069070812477243009}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &4045843740493680147
 MonoBehaviour:
   m_ObjectHideFlags: 0
