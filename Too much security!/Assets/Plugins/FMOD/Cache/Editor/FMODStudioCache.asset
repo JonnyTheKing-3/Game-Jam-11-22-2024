@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/TooMuchSecutiryFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638679866623428175
+  lastModified: 638679904889189152
   FileSizes:
   - Name: Desktop
     Value: 3224
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/TooMuchSecutiryFMOD/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638679866630554497
+  lastModified: 638679903282133752
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -82,7 +82,7 @@ MonoBehaviour:
   Path: Assets/TooMuchSecutiryFMOD/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638679866630414843
+  lastModified: 638679903282108906
   FileSizes:
   - Name: Desktop
     Value: 226912
@@ -130,7 +130,7 @@ MonoBehaviour:
   Path: Assets/TooMuchSecutiryFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638679866623513679
+  lastModified: 638679904889204058
   FileSizes:
   - Name: Desktop
     Value: 1126
@@ -164,7 +164,7 @@ MonoBehaviour:
   - {fileID: -8069070812477243009}
   StringsBanks:
   - {fileID: -807855071620163153}
-  cacheTime: 638679866630554497
+  cacheTime: 638679904889204058
   cacheVersion: 131618
 --- !u!114 &2594098571923771050
 MonoBehaviour:

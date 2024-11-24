@@ -105,7 +105,6 @@
 		<property name="length">
 			<value>1.5</value>
 		</property>
-		<property name="name" />
 		<relationship name="fadeInCurve">
 			<destination>{49b81c0a-9896-4b58-8a5b-89f027752288}</destination>
 		</relationship>
@@ -116,9 +115,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{d8ad429c-b506-4cbc-a18a-684dfae269a6}">
-		<property name="volume">
-			<value>-4</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -172,6 +168,9 @@
 	<object class="SingleSound" id="{c321c60e-5ca1-426d-a32e-013165e8cad1}">
 		<property name="startOffset">
 			<value>1</value>
+		</property>
+		<property name="volume">
+			<value>-3</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{6de94f50-f83b-40c8-b06d-9cc5c91d49e8}</destination>

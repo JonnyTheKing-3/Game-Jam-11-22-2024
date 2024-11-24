@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{292f0bc9-ff94-4692-9b62-7f740333a76d}">
+		<property name="assetPath">
+			<value>AlarmP2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.8750113378684805</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{092861c1-68c5-435b-9da4-ccc6a7000d71}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Snapshot" id="{9617165f-b844-45cf-9d91-1127187d8abf}">
 		<property name="name">
-			<value>New Snapshot</value>
+			<value>Suburbia</value>
 		</property>
 		<relationship name="mixer">
 			<destination>{e379b65f-104d-4b0a-b42d-7836632177d5}</destination>
@@ -48,7 +48,7 @@
 			<value>wetLevel</value>
 		</property>
 		<property name="value">
-			<value>-18</value>
+			<value>-12</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{3198b77d-4908-44cb-830b-71f6d88de622}</destination>
@@ -125,7 +125,7 @@
 			<value>decayTime</value>
 		</property>
 		<property name="value">
-			<value>950</value>
+			<value>1600</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{3198b77d-4908-44cb-830b-71f6d88de622}</destination>
