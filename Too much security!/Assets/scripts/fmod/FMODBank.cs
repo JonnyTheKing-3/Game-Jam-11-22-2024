@@ -8,12 +8,12 @@ public class FMODbanks : MonoBehaviour
 {
     public static FMODbanks Instance { get; private set; }
     public EventReference jumpSFX;
-    // public EventReference hoverSFX;
-    // public EventReference DeathByCrushinSFX;
-    // public EventReference GravitySwitchSFX;
-    // public EventReference platformFlyingSFX;
-    // public EventReference Music;
+    public EventReference dashSFX;
+    public EventReference crouchSFX;
+    public EventReference walkingSFX;
+    public EventReference snapshotSFX;
     // public EventReference Victory;
+    // public EventReference platformFlyingSFX;
 
     private void Awake()
     {
@@ -32,33 +32,37 @@ public class FMODbanks : MonoBehaviour
     {
         RuntimeManager.PlayOneShotAttached(jumpSFX, OriginOfSound);
     }
+    public void PlayDashSFX(GameObject OriginOfSound)
+    {
+        RuntimeManager.PlayOneShotAttached(dashSFX, OriginOfSound);
+    }
+    public void PlayCrouchSFX(GameObject OriginOfSound)
+    {
+        RuntimeManager.PlayOneShotAttached(crouchSFX, OriginOfSound);
+    }
+    public void PlayWalkSFX(GameObject OriginOfSound)
+    {
+        RuntimeManager.PlayOneShotAttached(walkingSFX, OriginOfSound);
+    }
     //
-    // private EventInstance hoverInstance;
-    // public void PlayHoverSFX()
-    // {
-    //     // Create the EventInstance for hover sound and start it
-    //     hoverInstance = RuntimeManager.CreateInstance(hoverSFX);
-    //     hoverInstance.start();
-    // }
-    // public void StopHoverSFX()
-    // {
-    //     // If the hover sound is playing, stop it, and release the instance
-    //     if (hoverInstance.isValid())
-    //     {
-    //         hoverInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-    //         hoverInstance.release();
-    //     }
-    // }
+    private EventInstance snapshotInstance;
+    public void StartSnapshotSFX()
+    {
+        // Create the EventInstance for hover sound and start it
+        snapshotInstance = RuntimeManager.CreateInstance(snapshotSFX);
+        snapshotInstance.start();
+    }
+    public void StopSnapshotSFX()
+    {
+        // If the hover sound is playing, stop it, and release the instance
+        if (snapshotInstance.isValid())
+        {
+            snapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            snapshotInstance.release();
+        }
+    }
     //
-    // public void PlayGravitySwitchSFX(GameObject OriginOfSound)
-    // {
-    //     RuntimeManager.PlayOneShotAttached(GravitySwitchSFX, OriginOfSound);
-    // }
     //
-    // public void PlayPlatformFlyingSFX(GameObject OriginOfSound)
-    // {
-    //     RuntimeManager.PlayOneShotAttached(platformFlyingSFX, OriginOfSound);
-    // }
     //
     // public void PlayVictoryTheme()
     // {

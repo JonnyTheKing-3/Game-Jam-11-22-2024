@@ -160,6 +160,8 @@ MonoBehaviour:
   JumpKey: 32
   DashKey: 112
   CrouchKey: 111
+  StartSnapshotKey: 256
+  StopSnapshotKey: 257
   rb: {fileID: 33400167}
   speed: 5
   crouchSpeed: 2.5
@@ -170,7 +172,7 @@ MonoBehaviour:
   properMoveDirection: {x: 0, y: 0, z: 0}
   isGrounded: 0
   DashDistance: 7
-  DashTime: 0.3
+  DashTime: 0.15
   DashCooldown: 0.5
   rayDistance: 1.2
   grouundLayer:
@@ -403,7 +405,35 @@ MonoBehaviour:
       Data2: 1270007741
       Data3: -2132826468
       Data4: 433976329
-    Path: event:/Jump
+    Path: event:/Player/Jump
+  dashSFX:
+    Guid:
+      Data1: -1001438976
+      Data2: 1266572812
+      Data3: 552840110
+      Data4: -1919670077
+    Path: event:/Player/Dash
+  crouchSFX:
+    Guid:
+      Data1: 1764822602
+      Data2: 1209968843
+      Data3: 1608946839
+      Data4: -718912480
+    Path: event:/Player/Crouch
+  walkingSFX:
+    Guid:
+      Data1: 923116864
+      Data2: 1171095418
+      Data3: -163719022
+      Data4: -647085479
+    Path: event:/Player/Walking
+  snapshotSFX:
+    Guid:
+      Data1: -1776871841
+      Data2: 1171241028
+      Data3: 655462813
+      Data4: -1081443048
+    Path: snapshot:/New Snapshot
 --- !u!4 &342726754
 Transform:
   m_ObjectHideFlags: 0

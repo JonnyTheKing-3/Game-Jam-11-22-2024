@@ -9,8 +9,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private KeyCode JumpKey;
     [SerializeField] private KeyCode DashKey;
     [SerializeField] private KeyCode CrouchKey;
+    [SerializeField] private KeyCode StartSnapshotKey;
+    [SerializeField] private KeyCode StopSnapshotKey;
 
     public Rigidbody rb;
+    private Coroutine walkingSoundCoroutine;
     
     [SerializeField] private float speed;
     [SerializeField] private float crouchSpeed;
@@ -66,7 +69,23 @@ public class PlayerMovement : MonoBehaviour
             case state.normal:
                 properMoveDirection = ApplyProperMoveDirection(); // Based on camera view
                 transform.position +=  properMoveDirection*desiredSpeed * Time.deltaTime;
+                if (Mathf.Abs(xInput)>0.1f || Mathf.Abs(zInput)>0.1f)
+                {
+                    if (walkingSoundCoroutine == null)
+                    {
+                        walkingSoundCoroutine = StartCoroutine(PlayWalkingSound());
+                    }
+                }
+                else
+                {
+                    if (walkingSoundCoroutine != null)
+                    {
+                        StopCoroutine(walkingSoundCoroutine);
+                        walkingSoundCoroutine = null;
+                    }
+                }
                 break;
+            
             case state.dashing:
                 // Dive towards the end position (MoveTowards doesn't work as well, gonna have to see why).
                 transform.position = Vector3.Lerp(transform.position, DashEndPos, DashTime);
@@ -83,13 +102,33 @@ public class PlayerMovement : MonoBehaviour
         zInput = Input.GetAxisRaw("Vertical");
         input = new Vector3(xInput, 0f, zInput);
 
+        if (Input.GetKeyDown(StartSnapshotKey))
+        {
+            FMODbanks.Instance.StartSnapshotSFX();
+            Debug.Log("start snapshot");
+        }
+        if (Input.GetKeyDown(StopSnapshotKey))
+        {
+            FMODbanks.Instance.StopSnapshotSFX();
+            Debug.Log("end snapshot");
+        }
+
         if (playerState == state.normal)
         {
-            if (Input.GetKey(CrouchKey)) { desiredSpeed = crouchSpeed; }
+            if (Input.GetKey(CrouchKey))
+            {
+                if (Input.GetKeyDown(CrouchKey)) {FMODbanks.Instance.PlayCrouchSFX(gameObject);}
+                desiredSpeed = crouchSpeed;
+            }
+            else if (Input.GetKeyUp(CrouchKey))
+            {
+                
+            }
             else { desiredSpeed = speed; }
 
             if (Input.GetKeyDown(DashKey) && playerState != state.dashing && Time.time - DashStartTime > DashCooldown)
             {
+                FMODbanks.Instance.PlayDashSFX(gameObject);
                 desiredSpeed = 0.0f;
 
                 // Store starting parameters.
@@ -132,5 +171,17 @@ public class PlayerMovement : MonoBehaviour
 
         // Combine input with directional vectors
         return (forward * input.z + right * input.x).normalized;
+    }
+
+    IEnumerator PlayWalkingSound()
+    {
+        while (true)
+        {
+            FMODbanks.Instance.PlayWalkSFX(gameObject);
+
+            // Adjust the interval based on desiredSpeed
+            float tempo = Mathf.Clamp(1f / desiredSpeed, 0.3f, 1f); // Faster tempo for higher speeds
+            yield return new WaitForSeconds(tempo);
+        }
     }
 }
