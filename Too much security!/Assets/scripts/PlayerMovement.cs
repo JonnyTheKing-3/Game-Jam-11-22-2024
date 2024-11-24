@@ -1,7 +1,9 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using FMOD.Studio;
 using FMODUnity;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,7 +16,10 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
     private Coroutine walkingSoundCoroutine;
-    
+    [Space]
+    public Timer timer;
+    public float damage;
+    [Space]
     [SerializeField] private float speed;
     [SerializeField] private float crouchSpeed;
     [SerializeField] private float desiredSpeed;
@@ -50,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         normal,
         dashing
     }
-
+    
     void Update()
     {
         GetInput();
@@ -105,24 +110,24 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(StartSnapshotKey))
         {
             FMODbanks.Instance.StartSnapshotSFX();
-            Debug.Log("start snapshot");
+            // Debug.Log("start snapshot");
         }
         if (Input.GetKeyDown(StopSnapshotKey))
         {
             FMODbanks.Instance.StopSnapshotSFX();
-            Debug.Log("end snapshot");
+            // Debug.Log("end snapshot");
         }
 
         if (playerState == state.normal)
         {
             if (Input.GetKey(CrouchKey))
             {
-                if (Input.GetKeyDown(CrouchKey)) {FMODbanks.Instance.PlayCrouchSFX(gameObject);}
+                if (Input.GetKeyDown(CrouchKey)) {FMODbanks.Instance.PlayCrouchEvent();}
                 desiredSpeed = crouchSpeed;
             }
             else if (Input.GetKeyUp(CrouchKey))
             {
-                
+                FMODbanks.Instance.StopCrouchEvent();
             }
             else { desiredSpeed = speed; }
 
@@ -183,5 +188,10 @@ public class PlayerMovement : MonoBehaviour
             float tempo = Mathf.Clamp(1f / desiredSpeed, 0.3f, 1f); // Faster tempo for higher speeds
             yield return new WaitForSeconds(tempo);
         }
+    }
+
+    void TookDamage()
+    {
+        timer.currentTime -= damage;
     }
 }

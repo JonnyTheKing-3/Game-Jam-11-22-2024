@@ -12,7 +12,7 @@ public class FMODbanks : MonoBehaviour
     public EventReference crouchSFX;
     public EventReference walkingSFX;
     public EventReference snapshotSFX;
-    // public EventReference Victory;
+    public EventReference damageSFX;
     // public EventReference platformFlyingSFX;
 
     private void Awake()
@@ -36,10 +36,20 @@ public class FMODbanks : MonoBehaviour
     {
         RuntimeManager.PlayOneShotAttached(dashSFX, OriginOfSound);
     }
-    public void PlayCrouchSFX(GameObject OriginOfSound)
+
+    private EventInstance crouchInstance;
+    public void PlayCrouchEvent()
     {
-        RuntimeManager.PlayOneShotAttached(crouchSFX, OriginOfSound);
+        crouchInstance = RuntimeManager.CreateInstance(crouchSFX);
+        crouchInstance.start();
     }
+    public void StopCrouchEvent()
+    {
+        crouchInstance.release();
+        crouchInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+    
+
     public void PlayWalkSFX(GameObject OriginOfSound)
     {
         RuntimeManager.PlayOneShotAttached(walkingSFX, OriginOfSound);
@@ -60,6 +70,11 @@ public class FMODbanks : MonoBehaviour
             snapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             snapshotInstance.release();
         }
+    }
+    
+    public void PlayDamageSFX(GameObject OriginOfSound)
+    {
+        RuntimeManager.PlayOneShotAttached(damageSFX, OriginOfSound);
     }
     //
     //
