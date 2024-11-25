@@ -1253,6 +1253,8 @@ GameObject:
   - component: {fileID: 33400162}
   - component: {fileID: 33400167}
   - component: {fileID: 33400169}
+  - component: {fileID: 33400170}
+  - component: {fileID: 33400171}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1280,6 +1282,7 @@ MonoBehaviour:
   rb: {fileID: 33400167}
   timer: {fileID: 0}
   damage: 0
+  touchingWall: 0
   speed: 5
   crouchSpeed: 2.5
   desiredSpeed: 0
@@ -1291,7 +1294,7 @@ MonoBehaviour:
   DashDistance: 7
   DashTime: 0.15
   DashCooldown: 0.5
-  rayDistance: 1.2
+  rayDistance: 1.3
   grouundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1299,6 +1302,7 @@ MonoBehaviour:
   CanJump: 1
   gravityStrength: 10
   cf: {fileID: 33400169}
+  isFacingRight: 0
   playerState: 0
 --- !u!212 &33400163
 SpriteRenderer:
@@ -1341,7 +1345,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 971360f1865099d4a9433dfc76b67bc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1361,8 +1365,8 @@ Transform:
   m_GameObject: {fileID: 33400161}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: 0, y: 3.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.8006449, y: 3.17, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1407,7 +1411,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &33400168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1427,7 +1431,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 0.20000021}
+  m_Size: {x: 0.87, y: 1.27, z: 0.32}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!75 &33400169
 ConstantForce:
@@ -1441,6 +1445,39 @@ ConstantForce:
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
+--- !u!95 &33400170
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33400161}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5115e0c5ffbcf1740b6c27dfcc241248, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &33400171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33400161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddce35b8bf66d564b9cb72eae22ecd39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &33431441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5173945083481591912, guid: 1792000168130f440a46abd5da574f09, type: 3}
@@ -55471,7 +55508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1962338533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60607,8 +60644,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 705507995}
   - {fileID: 1282634043}
-  - {fileID: 33400164}
   - {fileID: 1214303586}
+  - {fileID: 33400164}
   - {fileID: 251869835}
   - {fileID: 1996376624}
   - {fileID: 342726754}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -20,11 +21,13 @@ public class PlayerMovement : MonoBehaviour
     public Timer timer;
     public float damage;
     [Space]
+    public bool touchingWall;
+    
     [SerializeField] private float speed;
     [SerializeField] private float crouchSpeed;
     [SerializeField] private float desiredSpeed;
-    [SerializeField] private float xInput;
-    [SerializeField] private float zInput;
+    [SerializeField] public float xInput;
+    [SerializeField] public float zInput;
     [SerializeField] private Vector3 input;
     [SerializeField] private Vector3 properMoveDirection;
     [SerializeField] public bool isGrounded;
@@ -49,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravityStrength;
     public ConstantForce cf;
 
+    public bool isFacingRight = false;
 
     public state playerState;
     public enum state{
@@ -60,7 +64,8 @@ public class PlayerMovement : MonoBehaviour
     {
         GetInput();
         Grounded();
-
+        Flip();
+            
         // Apply artificial gravity if we're  not grounded
         if (!isGrounded)
         {
@@ -95,6 +100,8 @@ public class PlayerMovement : MonoBehaviour
                 // Dive towards the end position (MoveTowards doesn't work as well, gonna have to see why).
                 transform.position = Vector3.Lerp(transform.position, DashEndPos, DashTime);
 
+                if (touchingWall) { playerState = state.normal; }
+                
                 // Once we reach the end position, recover
                 if (Vector3.Distance(transform.position, DashEndPos) <= 1) { playerState = state.normal; }
                 break;
@@ -154,6 +161,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void Flip()
+    {
+        if ((isFacingRight && xInput < -0.1) || !isFacingRight && xInput > 0.1)
+        {
+            Vector3 temp = transform.localScale;
+            temp.x *= -1;
+            transform.localScale = temp;
+            isFacingRight = !isFacingRight;
+        }
+        
+    }
+
     void ResetCanJump()
     {
         CanJump = true;
@@ -189,6 +208,18 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(tempo);
         }
     }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.layer == 3) { return;}
+        touchingWall = true;
+    }
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.layer == 3) { return;}
+        touchingWall = false;
+    }
+    
 
     void TookDamage()
     {
